@@ -13,8 +13,37 @@ body{
     height: 100vh;
     width: 20vw;
     float: left;
-    background-color: yellow;
+    background-color: rgb(77, 43, 189);
     position: relative;
+    top: 0;
+    left: 0;
+}
+
+.lock-icon-container{
+    height: 5vw;
+    width: 5vw;
+    position: absolute;
+    bottom: calc(25pt + 4vw + 25pt);
+    left: calc(50% - 2.5vw);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    background-color: rgba(0,0,0, 0.4);
+    border-radius: 1vw;
+    display: none;
+}
+
+.lock-icon-container img{
+    width: 3vw;
+}
+
+.color-display{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .color-label{
@@ -31,8 +60,22 @@ body{
     cursor: pointer;
     color: white;
     background-color: rgba(0,0,0, 0.4);
+    z-index: 10;
 }
 
 .color-label:hover{
     background-color: rgba(0, 0, 0, 0.6);
+}
+
+#shellCounter{
+    height: auto;
+    width: fit-content;
+    position: fixed;
+    top: 10pt;
+    left: 10pt;
+    background-color: rgba(0,0,0, 0.4);
+    padding: 10pt;
+    border-radius: 10pt;
+    font-size: 15pt;
+    color: white;
 }

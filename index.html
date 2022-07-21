@@ -5,26 +5,53 @@
         <script src='main.js'></script>
     </head>
     <body onkeydown="keyClicked(event)">
-        <div id='colorCase0' class='color-case' style='background-color: #ed3737;'>
-            <div id='colorLabel0' class='color-label' onclick='copyColor(this)'>ED3737</div>
-            
+
+        <div id='colorCase0' class='color-case' onclick='lockCase(0)'>
+            <div id='colorLabel0' class='color-label' onclick='copyColor(this), lockCase(0)'>ED3737</div>
+            <div id='colorCase0Lock' class='lock-icon-container'>
+                <img class='lock-icon' src='icons/lock.png'>
+            </div>
+
+            <div class='color-display' style='background-color: #ed3737;'></div>
         </div>
-        <div id='colorCase1' class='color-case' style='background-color: #f0bf38;'>
-            <div id='colorLabel1' class='color-label' onclick='copyColor(this)'>F0BF38</div>
+
+        <div id='colorCase1' class='color-case' onclick='lockCase(1)'>
+            <div id='colorLabel1' class='color-label' onclick='copyColor(this), lockCase(1)'>F6A84F</div>
+            <div id='colorCase1Lock' class='lock-icon-container'>
+                <img class='lock-icon' src='icons/lock.png'>
+            </div>
             
+            <div class='color-display' style='background-color: #f6a84f;'></div>
         </div>
-        <div id='colorCase2' class='color-case' style='background-color: #4de473;'>
-            <div id='colorLabel2' class='color-label' onclick='copyColor(this)'>4DE473</div>
+
+        <div id='colorCase2' class='color-case' onclick='lockCase(2)'>
+            <div id='colorLabel2' class='color-label' onclick='copyColor(this), lockCase(2)'>E9E260</div>
+            <div id='colorCase2Lock' class='lock-icon-container'>
+                <img class='lock-icon' src='icons/lock.png'>
+            </div>
             
+            <div class='color-display' style='background-color: #e9e260;'></div>
         </div>
-        <div id='colorCase3' class='color-case' style='background-color: #5ee4fb;'>
-            <div id='colorLabel3' class='color-label' onclick='copyColor(this)'>5EE4FB</div>
+
+        <div id='colorCase3' class='color-case' onclick='lockCase(3)'>
+            <div id='colorLabel3' class='color-label' onclick='copyColor(this), lockCase(3)'>5EE4FB</div>
+            <div id='colorCase3Lock' class='lock-icon-container'>
+                <img class='lock-icon' src='icons/lock.png'>
+            </div>
             
+            <div class='color-display' style='background-color: #5ee4fb;'></div>
         </div>
-        <div id='colorCase4' class='color-case' style='background-color: #3c48c8;'>
-            <div id='colorLabel4' class='color-label' onclick='copyColor(this)'>3C48C8</div>
+
+        <div id='colorCase4' class='color-case' onclick='lockCase(4)'>
+            <div id='colorLabel4' class='color-label' onclick='copyColor(this), lockCase(4)'>3C48C8</div>
+            <div id='colorCase4Lock' class='lock-icon-container'>
+                <img class='lock-icon' src='icons/lock.png'>
+            </div>
             
+            <div class='color-display' style='background-color: #3c48c8;'></div>
         </div>
+
+        <div id='shellCounter'>Click space to begin!</div>
 
         <script>
             // return a promise
