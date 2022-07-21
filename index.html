@@ -10,20 +10,51 @@
             
         </div>
         <div id='colorCase1' class='color-case' style='background-color: #f0bf38;'>
-            <div id='colorLabel1' class='color-label'>F0BF38</div>
+            <div id='colorLabel1' class='color-label' onclick='copyColor(this)'>F0BF38</div>
             
         </div>
         <div id='colorCase2' class='color-case' style='background-color: #4de473;'>
-            <div id='colorLabel2' class='color-label'>4DE473</div>
+            <div id='colorLabel2' class='color-label' onclick='copyColor(this)'>4DE473</div>
             
         </div>
         <div id='colorCase3' class='color-case' style='background-color: #5ee4fb;'>
-            <div id='colorLabel3' class='color-label'>5EE4FB</div>
+            <div id='colorLabel3' class='color-label' onclick='copyColor(this)'>5EE4FB</div>
             
         </div>
         <div id='colorCase4' class='color-case' style='background-color: #3c48c8;'>
-            <div id='colorLabel4' class='color-label'>3C48C8</div>
+            <div id='colorLabel4' class='color-label' onclick='copyColor(this)'>3C48C8</div>
             
         </div>
+
+        <script>
+            // return a promise
+            function copyColor(text) {
+                var textToCopy = text.innerHTML;
+                text.innerHTML = 'Copied!';
+                revertColorText(text, textToCopy);
+                if (navigator.clipboard && window.isSecureContext) {
+                    return navigator.clipboard.writeText(textToCopy);
+                } else {
+                    let textArea = document.createElement("textarea");
+                    textArea.value = textToCopy;
+                    textArea.style.position = "fixed";
+                    textArea.style.left = "-999999px";
+                    textArea.style.top = "-999999px";
+                    document.body.appendChild(textArea);
+                    textArea.focus();
+                    textArea.select();
+                    return new Promise((res, rej) => {
+                        document.execCommand('copy') ? res() : rej();
+                        textArea.remove();
+                    });
+                }
+            }
+
+            function revertColorText(self, oldText) {
+                setTimeout(function() {
+                    self.innerHTML = oldText;
+                }, 500);
+            }
+        </script>
     </body>
 </html>
